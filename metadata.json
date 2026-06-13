@@ -1,0 +1,6 @@
+{
+  "name": "Cozy Reveal",
+  "description": "A cozy, aesthetic gender reveal app where guests vote and the wheel decides the future.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
