@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import { Voter, VoteTarget } from "../types";
 import { Baby, Sparkles } from "lucide-react";
+import audio from "../lib/audio";
 
 interface Props {
   key?: string;
@@ -17,10 +18,20 @@ export function PhaseVoting({ voters, onVote, onAdminStart }: Props) {
   const handleVote = (vote: VoteTarget) => {
     if (!name.trim()) return;
     onVote(name.trim(), vote);
+    audio.init();
     setFeedbackMessage(`Thanks ${name.trim()}! You voted for a ${vote}.`);
     setName("");
     setTimeout(() => setFeedbackMessage(""), 3000);
   };
+
+  useEffect(() => {
+    if (voters.length > 0) {
+      const timer = setTimeout(() => {
+        onAdminStart();
+      }, 10000);
+      return () => clearTimeout(timer);
+    }
+  }, [voters, onAdminStart]);
 
   return (
     <motion.div 

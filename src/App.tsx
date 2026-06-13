@@ -88,11 +88,6 @@ export default function App() {
       </main>
 
       <footer className="w-full max-w-5xl flex justify-center sm:justify-between items-center text-brand-accent text-xs pt-6 pb-2 border-t border-brand-border/30 z-10 mt-6 sm:mt-8">
-        <div className="flex gap-4 sm:gap-6 uppercase font-sans font-bold tracking-widest text-center flex-wrap justify-center">
-          <span>September 2024</span>
-          <span className="hidden sm:inline">•</span>
-          <span>Meadow Gardens</span>
-        </div>
       </footer>
     </div>
   );

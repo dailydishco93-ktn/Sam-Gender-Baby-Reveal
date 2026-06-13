@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
-import { Clock, Sparkles } from "lucide-react";
+import { Baby, Clock, Sparkles } from "lucide-react";
 import audio from "../lib/audio";
 
 interface Props {
@@ -17,7 +17,6 @@ export function PhaseCountdown({ onCountdownComplete }: Props) {
       setTimeLeft((prev) => {
         if (prev <= 1) {
           clearInterval(timer);
-          onCountdownComplete();
           return 0;
         }
         audio.playCountdownTick();
@@ -26,7 +25,7 @@ export function PhaseCountdown({ onCountdownComplete }: Props) {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [onCountdownComplete]);
+  }, []);
 
   return (
     <motion.div 
@@ -82,6 +81,17 @@ export function PhaseCountdown({ onCountdownComplete }: Props) {
           </motion.p>
         </div>
       </div>
+
+      {/* Hidden Admin Button */}
+      {timeLeft === 0 && (
+        <button 
+          onClick={onCountdownComplete}
+          className="absolute -bottom-16 right-4 p-2 opacity-10 hover:opacity-100 focus:opacity-100 transition-opacity text-brand-text/50 hover:text-brand-text"
+          aria-label="Start Spin"
+        >
+          <Baby className="w-5 h-5" />
+        </button>
+      )}
     </motion.div>
   );
 }

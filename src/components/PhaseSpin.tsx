@@ -51,14 +51,14 @@ export function PhaseSpin({ onSpinComplete }: Props) {
 
   const wheelBackground = `
     conic-gradient(from 0deg,
-      var(--color-brand-girl) 0deg 45deg,
-      var(--color-brand-boy) 45deg 90deg,
-      var(--color-brand-girl) 90deg 135deg,
-      var(--color-brand-boy) 135deg 180deg,
-      var(--color-brand-girl) 180deg 225deg,
-      var(--color-brand-boy) 225deg 270deg,
-      var(--color-brand-girl) 270deg 315deg,
-      var(--color-brand-boy) 315deg 360deg
+      #fbcfe8 0deg 45deg,
+      #bfdbfe 45deg 90deg,
+      #fbcfe8 90deg 135deg,
+      #bfdbfe 135deg 180deg,
+      #fbcfe8 180deg 225deg,
+      #bfdbfe 225deg 270deg,
+      #fbcfe8 270deg 315deg,
+      #bfdbfe 315deg 360deg
     )
   `;
 
