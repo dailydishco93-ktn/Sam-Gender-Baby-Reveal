@@ -93,7 +93,7 @@ export function PhaseReveal({ voters, onReset }: Props) {
           >
             <h3 className="font-sans font-bold text-sm uppercase tracking-widest text-[#a89078] mb-4 flex items-center justify-center gap-2">
               <Star className="w-4 h-4 text-brand-accent fill-brand-accent/20" />
-              Recent Guesses
+              You Guessed Correctly
             </h3>
             
             {winners.length > 0 ? (
